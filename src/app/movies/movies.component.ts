@@ -1,27 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
-import { MovieRepository } from '../models/movie.repository';
+import { AlertifyService } from '../services/alertify.service';
+import { MovieService } from '../services/movie.service';
+
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  styleUrls: ['./movies.component.css'],
+  providers:[MovieService]
 })
 export class MoviesComponent implements OnInit {
 
   title = "Film Listesi";
-  movies: Movie[];
-  filteredMovies: Movie[];
-  movieRepository: MovieRepository;
+  movies: Movie[]=[];
+  filteredMovies: Movie[]=[];
   filterText:string;
 
-  constructor() { 
-    this.movieRepository=new MovieRepository();
-    this.movies=this.movieRepository.getMovies();
-    this.filteredMovies=this.movies;
+  constructor(
+    private alertify:AlertifyService,
+    private movieService:MovieService) { 
+  
   }
 
   ngOnInit(): void {
+    this.movieService.getMovies().subscribe(data=>{
+      this.movies=data;
+      this.filteredMovies=this.movies;
+
+    });
   }
 
   onInputChange(){
@@ -36,10 +43,14 @@ export class MoviesComponent implements OnInit {
       $event.target.innerText = "Listeden Çıkar"
       $event.target.classList.remove('btn-primary');
       $event.target.classList.add('btn-danger');
+
+      this.alertify.success(movie.title + 'listene eklendi.');
     }else{
       $event.target.innerText = "Listeye Ekle"
       $event.target.classList.remove('btn-danger');
       $event.target.classList.add('btn-primary');
+
+      this.alertify.error(movie.title + 'listeden çıkarıldı.');
     }
   }
 

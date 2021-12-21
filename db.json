@@ -1,0 +1,18 @@
+{
+    "movies":[
+        {"id":1,"title":"Film 1","description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro quas! Eum nobis amet delectus vel? Tempora consequuntur suscipit numquam iure rem ipsam quos sequi. Culpa laborum commodi alias repellat.","imageUrl":"1.jpeg"},
+        {"id":2,"title":"Film 2","description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro quas! Eum nobis amet delectus vel? Tempora consequuntur suscipit numquam iure rem ipsam quos sequi. Culpa laborum commodi alias repellat.","imageUrl":"2.jpeg"},
+        {"id":3,"title":"Film 3","description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro quas! Eum nobis amet delectus vel? Tempora consequuntur suscipit numquam iure rem ipsam quos sequi. Culpa laborum commodi alias repellat.","imageUrl":"3.jpeg"},
+        {"id":4,"title":"Film 4","description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro quas! Eum nobis amet delectus vel? Tempora consequuntur suscipit numquam iure rem ipsam quos sequi. Culpa laborum commodi alias repellat.","imageUrl":"4.jpeg"},
+        {"id":5,"title":"Film 5","description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, porro quas! Eum nobis amet delectus vel? Tempora consequuntur suscipit numquam iure rem ipsam quos sequi. Culpa laborum commodi alias repellat.","imageUrl":"5.jpeg"}
+             
+    ],
+
+    "categories":[
+        {"id":1,"name":"Macera"},
+        {"id":2,"name":"Romantik"},
+        {"id":3,"name":"Bilim Kurgu"},
+        {"id":4,"name":"Komedi"},
+        {"id":5,"name":"Savaş"}
+    ]
+}
